@@ -270,13 +270,14 @@
 							message += " (" + err.details + ")";
 						}
 
-						if (err.code == plupload.FILE_SIZE_ERROR) {
-							alert(_("Error: File too large: ") + file.name);
-						}
-
-						if (err.code == plupload.FILE_EXTENSION_ERROR) {
-							alert(_("Error: Invalid file extension: ") + file.name);
-						}
+                        //  I have disabled these alerts for NB so he can create a less intrusive error experience. - LW
+//						if (err.code == plupload.FILE_SIZE_ERROR) {
+//							alert(_("Error: File too large: ") + file.name);
+//						}
+//
+//						if (err.code == plupload.FILE_EXTENSION_ERROR) {
+//							alert(_("Error: Invalid file extension: ") + file.name);
+//						}
 						
 						file.hint = message;
 						$('#' + file.id).attr('class', 'plupload_failed').find('a').css('display', 'block').attr('title', message);
